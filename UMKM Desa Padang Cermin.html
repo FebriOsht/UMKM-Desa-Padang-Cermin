@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMKM Desa Padang Cermin</title>
+    <link rel="stylesheet" href="UMKM Desa Padang Cermin.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #4CAF50;
+            padding: 20px 0;
+            color: white;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            font-weight: 300;
+            font-size: 1rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .menu li {
+            margin-left: 20px;
+        }
+        
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        
+        .menu a:hover {
+            color: #e0e0e0;
+        }
+        
+        .hero {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            padding: 50px;
+            margin: 30px 0;
+            text-align: center;
+            background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.7)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #3d8b40;
+            transform: translateY(-3px);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .products {
+            margin: 50px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: #333;
+            display: inline-block;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: #4CAF50;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: #f9f9f9;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            color: #4CAF50;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .contact {
+            margin: 50px 0;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #4CAF50;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 30px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            
+            .feature-card, .product-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="image/Logo UMKM1.png" alt="Logo UMKM" width="200" height="200">
+                    <h1>UMKM Desa Padang Cermin</h1>
+                </div>
+                <ul class="menu">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+                <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <nav id="mobile-menu" class="mobile-menu">
+        <div class="logo">
+            <h1>UMKM Desa Padang Cermin</h1>
+        </div>
+        <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#products">Produk</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Produk Lokal Berkualitas Tinggi</h2>
+            <p>Desa Padang Cermin memiliki produk-produk lokal UMKM berkualitas tinggi yang diproduksi dengan cinta dan keahlian untuk memenuhi kebutuhan Anda.</p>
+            <a href="#products" class="btn">Lihat Produk Kami</a>
+        </div>
+    </section>
+    
+    <section id="about" class="container">
+        <div class="section-title">
+            <h2>Tentang Kami</h2>
+        </div>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">★</div>
+                <h3>Kualitas Terbaik</h3>
+                <p>Kami menggunakan bahan-bahan berkualitas tinggi dan proses produksi yang teliti untuk menghasilkan produk terbaik.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">♻️</div>
+                <h3>Ramah Lingkungan</h3>
+                <p>Kami berkomitmen untuk menggunakan kemasan yang ramah lingkungan dan mendukung praktik bisnis berkelanjutan.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">❤️</div>
+                <h3>Produk Lokal</h3>
+                <p>Dengan membeli produk kami, Anda mendukung pengusaha lokal dan ekonomi daerah.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="products" class="products container">
+        <div class="section-title">
+            <h2>Produk Kami</h2>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('image/Kopi Ketagihan.jpeg')"></div>
+                <div class="product-info">
+                    <h3>Kopi Ketagihan</h3>
+                    <div class="product-price">Rp 50.000</div>
+                    <a href="https://wa.me/6281317156651" class="btn">Pesan Sekarang</a>
+                    <p style="margin-top: 10px;"><a href="https://websiteanda.com" style="display: inline-block; padding: 5px 10px;">Kunjungi Website</a></p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('image/Tempe Bu Ainah.jpeg')"></div>
+                <div class="product-info">
+                    <h3>Tempe</h3>
+                    <div class="product-price">Rp 3.000</div>
+                    <a href="https://wa.me/6285380352840" class="btn">Pesan Sekarang</a>
+                    <p style="margin-top: 10px;"><a href="https://websiteanda.com" style="display: inline-block; padding: 5px 10px;">Kunjungi Website</a></p>
+                </div>
+            </div>
+    </section>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <h1>UMKM Desa Padang Cermin</h1>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#products">Produk</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=100086667674907&mibextid=9R9pXO">Facebook</a> |
+                <a href="https://www.instagram.com/pemdes_padangcermin">Instagram</a> |
+                <a href="https://youtube.com/@DesaPadangCermin?si=AFHkXNWu-ikGGdkY">YouTube</a>
+            </div>
+            <p class="copyright">© 2025 UMKM Desa Padang Cermin. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>
